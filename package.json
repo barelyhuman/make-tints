@@ -1,17 +1,20 @@
 {
   "name": "make-tints",
   "version": "0.0.5",
+  "packageManager": "pnpm@6.32.3",
   "description": "[![NPM version](https://img.shields.io/npm/v/make-tints?color=a1b858&label=)](https://www.npmjs.com/package/make-tints)",
   "keywords": [],
   "homepage": "https://github.com/barelyhuman/make-tints#readme",
   "bugs": {
     "url": "https://github.com/barelyhuman/make-tints/issues"
   },
-  "repository": "git+https://github.com/barelyhuman/make-tints.git",
-  "funding": "https://github.com/sponsors/barelyhuman",
   "license": "MIT",
   "author": "Reaper <ahoy@barelyhuman.dev>",
-  "sideEffects": false,
+  "repository": "git+https://github.com/barelyhuman/make-tints.git",
+  "funding": "https://github.com/sponsors/barelyhuman",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -19,9 +22,10 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "typesVersions": {
     "*": {
       "*": [
@@ -33,9 +37,6 @@
   "directories": {
     "test": "test"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
@@ -63,6 +64,5 @@
     "unbuild": "^0.7.0",
     "vite": "^2.8.6",
     "vitest": "^0.7.10"
-  },
-  "packageManager": "pnpm@6.32.3"
+  }
 }

@@ -31,13 +31,3 @@ export function makeTints(toTint: TintColorMap[]) {
   }
   return result
 }
-
-// eslint-disable-next-line no-console
-console.log(
-  makeTints([
-    {
-      base: '#000',
-      tones: [20, 40, 60],
-    },
-  ]),
-)
