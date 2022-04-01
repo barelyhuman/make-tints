@@ -1,4 +1,6 @@
-import { hexToHSL, hslToHex } from '@barelyhuman/tocolor'
+import toColor from '@barelyhuman/tocolor'
+
+const { hexToHSL, hslToHex } = toColor
 
 function lighter(percentage: number, color: string) {
   if (isNaN(percentage)) return color
