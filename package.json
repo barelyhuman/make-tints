@@ -48,7 +48,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@barelyhuman/tocolor": "^0.0.7"
+    "@barelyhuman/tocolor": "^0.0.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.9",
