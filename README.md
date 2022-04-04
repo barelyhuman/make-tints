@@ -11,16 +11,16 @@ npm i make-tints
 ## Usage
 
 ```js
-import { makeTints } from 'make-tints'
+import {makeTints} from 'make-tints'
 
 makeTints([
-  {
-    base: '#000',
-    tones: [20, 40, 60],
-  },
+	{
+		base: '#000',
+		tones: [20, 40, 60],
+	},
 ]) // [ { '20': 'cccccc', '40': '999999', '60': '666666', base: '000000' } ]
 ```
 
 ## License
 
-[MIT](./LICENSE) License © 2021 [Reaper](https://github.com/barelyhuman)
+[MIT](./LICENSE) License © 2022 [Reaper](https://github.com/barelyhuman)
