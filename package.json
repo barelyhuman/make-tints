@@ -43,7 +43,7 @@
 		"build": "rimraf dist; unbuild; nr size; nr copy",
 		"dev": "unbuild --stub",
 		"prepublishOnly": "nr build",
-		"release": "nr build;bumpp --commit --push --tag;cd dist;pnpm publish;cd ..;",
+		"release": "cd dist;pnpm publish;cd ..;",
 		"start": "esno src/index.ts",
 		"test": "vitest",
 		"size": "sizesnap",
