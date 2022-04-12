@@ -1,4 +1,6 @@
-# make-tints
+<p align="center">
+  <img src="images/make-tints.png" height="64">
+<p align="center">The simplest color tone function for JS</p>
 
 [![NPM version](https://img.shields.io/npm/v/make-tints?color=a1b858&label=)](https://www.npmjs.com/package/make-tints)
 [![CI](https://github.com/barelyhuman/make-tints/actions/workflows/ci.yml/badge.svg)](https://github.com/barelyhuman/make-tints/actions/workflows/ci.yml)
