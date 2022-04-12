@@ -17,14 +17,14 @@
 	"author": "Reaper <ahoy@barelyhuman.dev>",
 	"repository": "git+https://github.com/barelyhuman/make-tints.git",
 	"funding": "https://github.com/sponsors/barelyhuman",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"main": "./index.cjs",
+	"module": "./index.mjs",
+	"types": "./index.d.ts",
 	"exports": {
 		".": {
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.mjs",
-			"types": "./dist/index.d.ts"
+			"require": "./index.cjs",
+			"import": "./index.mjs",
+			"types": "./index.d.ts"
 		}
 	},
 	"files": [
@@ -34,8 +34,8 @@
 	"typesVersions": {
 		"*": {
 			"*": [
-				"./dist/*",
-				"./dist/index.d.ts"
+				"./*",
+				"./index.d.ts"
 			]
 		}
 	},
@@ -43,7 +43,7 @@
 		"test": "test"
 	},
 	"scripts": {
-		"build": "rimraf dist && unbuild && nr size",
+		"build": "rimraf dist; unbuild; nr size; nr copy",
 		"dev": "unbuild --stub",
 		"prepublishOnly": "nr build",
 		"release": "bumpp --commit --push --tag && pnpm publish",
@@ -51,7 +51,8 @@
 		"test": "vitest",
 		"size": "sizesnap",
 		"fix": "prettier --write .",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"copy": "shx cp package.json README.md LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.prettier=undefined; this.jest=undefined;this.directories=undefined;this.sizesnap=undefined\""
 	},
 	"prettier": "@barelyhuman/prettier-config",
 	"dependencies": {
@@ -69,9 +70,11 @@
 		"@types/node": "^17.0.23",
 		"bumpp": "^7.1.1",
 		"esno": "^0.14.1",
+		"json": "^11.0.0",
 		"pnpm": "^6.32.3",
 		"prettier": "^2.6.2",
 		"rimraf": "^3.0.2",
+		"shx": "^0.3.4",
 		"sizesnap": "^0.1.1",
 		"typescript": "^4.6.2",
 		"unbuild": "^0.7.0",

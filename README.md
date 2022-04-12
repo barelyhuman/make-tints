@@ -1,8 +1,8 @@
 # make-tints
 
 [![NPM version](https://img.shields.io/npm/v/make-tints?color=a1b858&label=)](https://www.npmjs.com/package/make-tints)
-
 [![CI](https://github.com/barelyhuman/make-tints/actions/workflows/ci.yml/badge.svg)](https://github.com/barelyhuman/make-tints/actions/workflows/ci.yml)
+[![install size](https://packagephobia.com/badge?p=make-tints)](https://packagephobia.com/result?p=make-tints)
 
 ## Install
 
