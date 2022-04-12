@@ -42,14 +42,13 @@
 	"scripts": {
 		"build": "rimraf dist; unbuild; nr size; nr copy",
 		"dev": "unbuild --stub",
-		"prepublishOnly": "nr build",
-		"release": "cd dist;pnpm publish;cd ..;",
+		"release": "bumpp --commit --tag; nr build; cd dist; pnpm publish; cd ..;",
 		"start": "esno src/index.ts",
 		"test": "vitest",
 		"size": "sizesnap",
 		"fix": "prettier --write .",
 		"typecheck": "tsc --noEmit",
-		"copy": "shx cp package.json README.md LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.prettier=undefined; this.jest=undefined;this.directories=undefined;this.sizesnap=undefined\""
+		"copy": "shx cp package.json README.md LICENSE dist; json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.prettier=undefined; this.jest=undefined;this.directories=undefined;this.sizesnap=undefined\""
 	},
 	"prettier": "@barelyhuman/prettier-config",
 	"dependencies": {
