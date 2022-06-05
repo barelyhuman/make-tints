@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>make-tints | demo</title>
+		<link rel="stylesheet" href="./styles/global.css" />
+	</head>
+	<body>
+		<div class="bg-base min-h-inherit h-full">
+			<section
+				class="flex pb-10 max-w-3xl mx-auto px-2 flex-col min-h-inherit h-full justify-center items-center"
+			>
+				<div
+					class="h-1/4 flex order-2 sm:order-1 justify-center items-center w-full"
+				>
+					<div class="w-3/4 sm:w-1/2 mx-auto">
+						<label class="relative w-full">
+							<input
+								id="color-input"
+								class="w-full text-text p-3 bg-surface rounded-lg"
+								placeholder="Enter hex code"
+								name="color"
+							/>
+							<button
+								type="submit"
+								class="absolute inline-block top-1/2 right-1 px-4 py-2 rounded-md -translate-y-1/2 bg-accent text-on-accent"
+							>
+								&rarr;
+							</button>
+						</label>
+					</div>
+					<div class="flex w-1/4 sm:w-1/2">
+						<a
+							href="https://github.com/barelyhuman/make-tints"
+							target="_blank"
+							rel="noreferrer"
+							class="ml-auto inline-block p-2.5 text-subtle bg-surface rounded-full hover:text-text shrink-0 shadow-sm"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path
+									d="M15 22V18C15.14 16.75 14.78 15.49 14 14.5C17 14.5 20 12.5 20 9C20.08 7.75 19.73 6.52 19 5.5C19.28 4.35 19.28 3.15 19 2C19 2 18 2 16 3.5C13.36 3 10.64 3 8 3.5C6 2 5 2 5 2C4.7 3.15 4.7 4.35 5 5.5C4.27 6.52 3.92 7.75 4 9C4 12.5 7 14.5 10 14.5C9.61 14.99 9.32 15.55 9.15 16.15C8.98 16.75 8.93 17.38 9 18V22"
+								></path>
+								<path d="M9 18c-4.51 2-5-2-7-2"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<div
+					class="h-3/4 py-2 order-1 sm:order-2 w-full grid grid-cols-2 lg:grid-cols-5 gap-x-3 gap-y-3"
+					id="color-container"
+				></div>
+			</section>
+		</div>
+		<script src="./js/main.js" type="module"></script>
+	</body>
+</html>

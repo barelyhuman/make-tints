@@ -1,0 +1,35 @@
+name: Docs
+on:
+  push:
+    branches: [main]
+
+jobs:
+  docs:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 6.32.3
+
+      - name: Install and Build
+        run: |
+          pnpm i
+          pnpm build
+          cd www 
+          pnpm i
+          pnpm build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          branch: gh-pages
+          folder: www/dist

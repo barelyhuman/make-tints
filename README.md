@@ -12,15 +12,18 @@
 npm i make-tints
 ```
 
+[See it in action &rarr;](https://barelyhuman.github.io/make-tints)
+
 ## Usage
 
 ```js
 import {tint} from 'make-tints'
 
-const toner = tint('#000')
-toner(20) // cccccc
-toner(40) // 999999
-toner(60) // 666666
+const tintBy = tint('#000')
+tintBy(-20) //=> 000000 darker tints can be achieved by using negative percentages
+tintBy(20) //=> 333333
+tintBy(40) //=> 666666
+tintBy(60) //=> 999999
 ```
 
 ## License

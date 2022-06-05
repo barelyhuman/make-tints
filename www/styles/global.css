@@ -1,0 +1,63 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --base: theme('colors.zinc.50');
+    --surface: theme('colors.zinc.100');
+    --overlay: theme('colors.zinc.200');
+    --muted: theme('colors.zinc.500');
+    --subtle: theme('colors.zinc.700');
+    --text: theme('colors.zinc.900');
+    --error: theme('colors.red.500');
+    --accent: theme('colors.emerald.400');
+    --on-accent: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --base: theme('colors.zinc.900');
+        --surface: theme('colors.zinc.800');
+        --overlay: theme('colors.zinc.700');
+        --muted: theme('colors.zinc.500');
+        --subtle: theme('colors.zinc.400');
+        --text: theme('colors.zinc.200');
+        --accent: theme('colors.emerald.400');
+        --on-accent: white;
+    }
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    background: var(--base);
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+    height: 100%;
+}
+
+.bg-cross {
+    --cross-color: #f4f4f5;
+    --cross-bg: #fff;
+    background-color: var(--cross-bg);
+    opacity: 0.8;
+    background: radial-gradient(circle, transparent 20%, var(--cross-bg) 20%, var(--cross-bg) 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, var(--cross-bg) 20%, var(--cross-bg) 80%, transparent 80%, transparent) 25px 25px, linear-gradient(var(--cross-color) 2px, transparent 2px) 0 -1px, linear-gradient(90deg, var(--cross-color) 2px, var(--cross-bg) 2px) -1px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
+
+.dark .bg-cross {
+    --cross-color: #27272a;
+    --cross-bg: #18181b;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
+}

@@ -1,0 +1,14 @@
+{
+	"name": "www",
+	"private": true,
+	"scripts": {
+		"dev": "parcel index.html",
+		"build": "parcel build index.html --public-url '/make-tints/' "
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.7",
+		"parcel": "^2.6.0",
+		"postcss": "^8.4.14",
+		"tailwindcss": "^3.0.24"
+	}
+}
