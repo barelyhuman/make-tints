@@ -1,5 +1,7 @@
 import {tint} from '../../dist/index.mjs'
 import {copyToClipboard} from './copy.js'
+import Toastify from 'toastify-js'
+import 'toastify-js/src/toastify.css'
 
 function generateShades(color) {
 	const darker = []
@@ -13,7 +15,6 @@ function generateShades(color) {
 
 	const tinter = tint(color)
 
-	// lighter colors
 	for (let i = 1; ; ) {
 		const _color = tinter(i * 5)
 		lighter.push('#' + _color)
@@ -25,7 +26,6 @@ function generateShades(color) {
 		i += 1
 	}
 
-	// darker colors
 	for (let i = 1; ; ) {
 		const per = -(i * 5)
 		const nextPer = -((i + 1) * 5)
@@ -58,9 +58,25 @@ function createColorCard(color, ping) {
 			'hover:scale-110',
 		],
 	)
+
 	div.style.backgroundColor = color
+
 	div.addEventListener('click', () => {
 		copyToClipboard(color)
+		Toastify({
+			text: `Copied ${color}`,
+			duration: 3000,
+			newWindow: true,
+			close: true,
+			gravity: 'top',
+			position: 'right',
+			style: {
+				border: '2px solid var(--accent)',
+				background: 'var(--base)',
+				color: 'var(--accent)',
+				'box-shadow': 'none',
+			},
+		}).showToast()
 	})
 
 	const colorLabel = createColorLabel(color)
