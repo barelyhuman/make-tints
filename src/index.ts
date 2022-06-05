@@ -8,7 +8,7 @@ interface TintColorMap {
 interface TintColorResult {
 	base: string
 	key: string
-	[key: number]: string
+	[key: string | number]: string
 }
 
 function lighter(percentage: number, color: string) {
@@ -20,8 +20,20 @@ function lighter(percentage: number, color: string) {
 	return hslToHex(h, s, _afterLighten)
 }
 
+function darker(percentage: number, color: string) {
+	if (isNaN(percentage)) return color
+	if (percentage < 0) percentage = 0
+	const {h, s, l} = hexToHSL(color)
+	let _afterDarken = l - percentage
+	if (l - percentage < 0) _afterDarken = 0
+	return hslToHex(h, s, _afterDarken)
+}
+
 export function tint(color: string) {
-	return (percentage: number) => lighter(100 - percentage, parseToHex(color))
+	return (percentage: number) =>
+		percentage > 0
+			? lighter(100 - percentage, parseToHex(color))
+			: darker(Math.abs(percentage), parseToHex(color))
 }
 
 /**
@@ -36,8 +48,12 @@ export function makeTints(toTint: TintColorMap[]) {
 			key: toTintItem.base,
 		}
 		toTintItem.tones.forEach(tone => {
-			const per = 100 - tone
-			_item[tone] = lighter(per >= 0 ? per : 0, toTintItem.base)
+			if (tone < 0) {
+				_item[tone] = darker(Math.abs(tone), toTintItem.base)
+			} else {
+				const per = 100 - tone
+				_item[tone] = lighter(per, toTintItem.base)
+			}
 		})
 
 		result.push(_item)
