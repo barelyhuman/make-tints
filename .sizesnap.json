@@ -1,4 +1,14 @@
 {
+  "dist/LICENSE": {
+    "size": "1.106KB",
+    "brotli": "505B",
+    "gzip": "676B"
+  },
+  "dist/README.md": {
+    "size": "943B",
+    "brotli": "427B",
+    "gzip": "502B"
+  },
   "dist/index.cjs": {
     "size": "528B",
     "brotli": "258B",
@@ -13,5 +23,10 @@
     "size": "427B",
     "brotli": "209B",
     "gzip": "238B"
+  },
+  "dist/package.json": {
+    "size": "1.06KB",
+    "brotli": "411B",
+    "gzip": "483B"
   }
 }
