@@ -40,9 +40,9 @@
 		"test": "test"
 	},
 	"scripts": {
-		"build": "rimraf dist; unbuild; nr size; nr copy",
+		"build": "rimraf dist; unbuild; nr copy",
 		"dev": "unbuild --stub",
-		"release": "bumpp --commit --tag; nr build; cd dist; pnpm publish; cd ..;",
+		"release": "bumpp --commit --tag; nr build; cd dist; pnpm publish; cd ..; nr size",
 		"start": "esno src/index.ts",
 		"test": "vitest",
 		"size": "sizesnap",
