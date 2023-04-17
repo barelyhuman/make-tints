@@ -1,22 +1,18 @@
 export function copyToClipboard(strToCopy) {
-	if (!navigator?.permissions?.query) {
+	if (!navigator?.clipboard) {
 		return fallBackCopy(strToCopy)
 	}
 
-	navigator?.permissions?.query({name: 'clipboard-write'}).then(result => {
-		if (result.state == 'granted' || result.state == 'prompt') {
-			navigator.clipboard.writeText(strToCopy).then(
-				function () {
-					// ignore and digest
-				},
-				function () {
-					return fallBackCopy(strToCopy)
-				},
-			)
-		} else {
-			return fallBackCopy(strToCopy)
-		}
-	})
+	if (navigator.clipboard) {
+		navigator.clipboard.writeText(strToCopy).then(
+			function () {
+				// ignore and digest
+			},
+			function () {
+				return fallBackCopy(strToCopy)
+			},
+		)
+	}
 }
 
 function fallBackCopy(strToCopy) {
