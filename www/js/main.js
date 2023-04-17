@@ -169,6 +169,7 @@ function renderColors({color, container} = {}) {
 
 function init() {
 	const colorInput = document.getElementById('color-input')
+	const submitButton = document.getElementById('color-input-button')
 	const colorContainer = document.getElementById('color-container')
 
 	const initialColor = '#18181b'
@@ -178,6 +179,13 @@ function init() {
 	renderColors({
 		color: initialColor,
 		container: colorContainer,
+	})
+
+	submitButton.addEventListener('click', e => {
+		renderColors({
+			color: colorInput.value,
+			container: colorContainer,
+		})
 	})
 
 	colorInput.addEventListener('keyup', e => {

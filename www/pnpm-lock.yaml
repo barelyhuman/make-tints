@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   autoprefixer: ^10.4.7
@@ -14,7 +14,7 @@ devDependencies:
   autoprefixer: 10.4.7_postcss@8.4.14
   parcel: 2.6.0_postcss@8.4.14
   postcss: 8.4.14
-  tailwindcss: 3.0.24
+  tailwindcss: 3.0.24_postcss@8.4.14
 
 packages:
 
@@ -206,7 +206,7 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/config-default/2.6.0_69e9985c3f709ee341874e7ff3c41515:
+  /@parcel/config-default/2.6.0_nhuzqxb7ocpogqmhjz77hravcu:
     resolution: {integrity: sha512-DXovFPhZITmTvFaSEdC8RRqROs9FLIJ4u8yFSU6FUyq2wpvtYVRXXoDrvXgClh2csXmK7JTJTp5JF7r0rd2UaA==}
     peerDependencies:
       '@parcel/core': ^2.6.0
@@ -216,7 +216,7 @@ packages:
       '@parcel/core': 2.6.0
       '@parcel/namer-default': 2.6.0_@parcel+core@2.6.0
       '@parcel/optimizer-css': 2.6.0_@parcel+core@2.6.0
-      '@parcel/optimizer-htmlnano': 2.6.0_69e9985c3f709ee341874e7ff3c41515
+      '@parcel/optimizer-htmlnano': 2.6.0_nhuzqxb7ocpogqmhjz77hravcu
       '@parcel/optimizer-image': 2.6.0_@parcel+core@2.6.0
       '@parcel/optimizer-svgo': 2.6.0_@parcel+core@2.6.0
       '@parcel/optimizer-terser': 2.6.0_@parcel+core@2.6.0
@@ -470,7 +470,7 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/optimizer-htmlnano/2.6.0_69e9985c3f709ee341874e7ff3c41515:
+  /@parcel/optimizer-htmlnano/2.6.0_nhuzqxb7ocpogqmhjz77hravcu:
     resolution: {integrity: sha512-HmvcUoYpfdx8ZfID4WOj/SE8N78NEBmzAffZ8f827mYMr4ZrbKzAgg6OG3tBbfF0zxH0bIjZcwqwZYk4SdbG7g==}
     engines: {node: '>= 12.0.0', parcel: ^2.6.0}
     dependencies:
@@ -1645,8 +1645,11 @@ packages:
     resolution: {integrity: sha512-pSTJ7wC6uTl16PKLXQV7RfL9FGoIDA1iVpNvaav47n6UkUdKqfx0spcVPpw35kWdRcHJF61YAvkPjP2hTwHQ+Q==}
     engines: {node: '>= 12.0.0'}
     hasBin: true
+    peerDependenciesMeta:
+      '@parcel/core':
+        optional: true
     dependencies:
-      '@parcel/config-default': 2.6.0_69e9985c3f709ee341874e7ff3c41515
+      '@parcel/config-default': 2.6.0_nhuzqxb7ocpogqmhjz77hravcu
       '@parcel/core': 2.6.0
       '@parcel/diagnostic': 2.6.0
       '@parcel/events': 2.6.0
@@ -1909,10 +1912,12 @@ packages:
       stable: 0.1.8
     dev: true
 
-  /tailwindcss/3.0.24:
+  /tailwindcss/3.0.24_postcss@8.4.14:
     resolution: {integrity: sha512-H3uMmZNWzG6aqmg9q07ZIRNIawoiEcNFKDfL+YzOPuPsXuDXxJxB9icqzLgdzKNwjG3SAro2h9SYav8ewXNgig==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.1
       chokidar: 3.5.3
